@@ -1,0 +1,2668 @@
+{% extends 'EtalonSite/base.html' %}
+{% load static %}
+{% load sass_tags %}
+{% block head %}
+<title>ЭталонТрансСервис — транспортная компания в Пойковском</title>
+<meta name="robots" content="index-follow">
+<meta name="description"
+	content="Выполняем комплекс работ в области транспортировки, погрузки и доставки различного перечня грузов для нефтегазового сектора. Мы готовы начать работу с вами.">
+<meta name="keywords"
+	content="Официальный сайт ЭталонТрансСервис, ЭталонТрансСервис Сайты, ЭталонТрансСервис Порталы, ЭталонТрансСервис Предприятие, Предприятие, ЭталонТранс, Альбина Топоркова, транспортировка, погрузка, погрузочно-разгрузочные работы, перевозка, транспортные средства, Западная Сибирь, Пойковский, подготовительно-заключительные работы, завоз, вывоз, подвоз, монтаж, аудит безопасности, бизнес, Профильная аккредитация, вакансии, работа">
+<meta property="og:title" content="Официальный веб-сайт ЭталонТрансСервис">
+<meta property="og:type" content="website">
+<meta property="og:description"
+	content="Выполняем комплекс работ в области транспортировки, погрузки и доставки различного перечня грузов для нефтегазового сектора. Мы готовы начать работу с вами.">
+<meta property="og:url" content="">
+<meta property="og:image" content="" title="" alt="">
+<meta property="twitter:title" content="Официальный веб-сайт ЭталонТрансСервис">
+<meta property="twitter:description"
+	content="Выполняем комплекс работ в области транспортировки, погрузки и доставки различного перечня грузов для нефтегазового сектора. Мы готовы начать работу с вами.">
+<meta property="twitter:image" content="" title="" alt="">
+<link href="{% sass_src 'EtalonSite/css/home.scss' %}" rel="stylesheet" type="text/css" />
+
+{% endblock %}
+
+{% block content %}
+<style>
+
+:root {
+    --color-text: #FFF;
+    --color-front: hsl(250deg, 100%, 40%);
+    --color-back: hsl(252deg, 100%, 60%);
+  }
+
+
+.tag {
+    position: relative;
+    display: inline-block;
+    border-radius: 6px;
+    clip-path: polygon(20px 0px, 100% 0px, 100% 100%, 0% 100%, 0% 20px);
+    background: var(--color-front);
+    padding: 16px 40px;
+    margin: 0 8px;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--color-text);
+    transition: clip-path 500ms;
+  }
+  
+  .tag:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: var(--color-back);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1); 
+    border-radius: 0 0 6px 0;
+    transition: transform 500ms;
+  }
+  
+  .tag:hover {
+    clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0% 100%, 0% 0px);
+  }
+  
+  .tag:hover:after {
+    transform: translate(-100%, -100%);
+  }
+
+	.TitlePaper {
+		font-size: 20px;
+		color: #30f;
+		font-weight: 600;
+		/* line-height: 2.625rem; */
+		/* margin-left: -20px; */
+		letter-spacing: -.04em;
+	}
+
+
+
+	.file_block {
+		border-radius: 20px;
+		box-shadow: -6px -35px 74px -20px rgba(210, 206, 206, 0.45) inset;
+	}
+
+
+
+	.liner,
+	.liner__end {
+		color: #30f;
+		display: flex;
+		align-items: flex-start;
+		text-align: left;
+	}
+
+	.liner:before {
+		content: '';
+		/* flex-grow: 1; */
+		height: 2px;
+		background: #30f;
+		min-width: 50px;
+		margin: auto;
+		/* float: left; */
+	}
+
+	.liner:after {
+		content: '';
+		flex-grow: 1;
+		height: 2px;
+		background: #30f;
+		min-width: 20px;
+		/* margin: 20px; */
+
+		/* float: left; */
+	}
+
+	.liner::before {
+		margin-top: 40px;
+		margin-right: 20px;
+	}
+
+	.liner::after {
+		margin-top: 40px;
+
+		margin-left: 20px;
+	}
+
+
+
+
+	.liner__end::after {
+		content: '';
+		/* flex-grow: 1; */
+		height: 2px;
+		background: #30f;
+		min-width: 50px;
+		margin: auto;
+		/* float: left; */
+	}
+
+	.liner__end:before {
+		content: '';
+		flex-grow: 1;
+		height: 2px;
+		background: #30f;
+		min-width: 20px;
+		/* margin: 20px; */
+
+		/* float: left; */
+	}
+
+	.liner__end::after {
+		margin-top: 40px;
+		margin-right: 20px;
+	}
+
+	.liner__end::before {
+		margin-top: 40px;
+
+		margin-left: 20px;
+	}
+
+	.ticker {
+		display: flex;
+		overflow: hidden;
+	}
+
+	.ticker__list {
+		display: flex;
+		margin-top: 20px;
+		animation: ticker 20s infinite linear;
+	}
+
+	.Uslugi__text {
+		margin-top: 20px;
+	}
+
+	@media (min-width: 991px) {
+		.Uslugi__text {
+			margin-top: 40px;
+		}
+
+		.TitlePaper-block {
+			padding-top: 30px;
+			/* margin-left: -20px; */
+		}
+
+		.plast {
+			width: 800px;
+		}
+	}
+
+	@media (min-width: 1350px) {
+
+		.plast__two {
+			width: 1350px;
+		}
+
+		.plast__three {
+			width: 850px;
+		}
+
+	}
+
+	.plast__block {
+		margin-top: 50px;
+	}
+
+	/* .ticker__list:hover{
+	animation-play-state: paused;
+} */
+	.ticker:hover {
+		animation-play-state: paused;
+	}
+
+	.ticker__item {
+		margin-right: 30px;
+	}
+
+	@keyframes ticker {
+		100% {
+			transform: translateX(-100%);
+		}
+
+	}
+
+	.xmao-item {
+		margin-top: 90px;
+	}
+
+
+	.WestSiberia .sup {
+		font-style: italic;
+		font-size: 28px;
+		margin-left: -25px;
+		text-align: center;
+		vertical-align: top;
+		/* margin-bottom: 90px; */
+	}
+
+	.WestSiberia-text {
+		font-size: 36px;
+		font-style: italic;
+		margin-left: -50px;
+
+	}
+
+	.pageText {
+		font-weight: 600;
+		font-size: 2.25rem;
+		line-height: 2.625rem;
+		letter-spacing: -.0em;
+		margin-bottom: 3.275rem;
+		position: relative;
+		z-index: 1;
+		/* margin-left: 2rem; */
+	}
+
+	.pageTitle {
+		color: #000;
+		font-weight: 700;
+		font-size: 4.6875rem;
+		line-height: 4.875rem;
+		letter-spacing: -.05em;
+		margin-bottom: 0.225rem;
+		margin-left: -6px;
+		position: relative;
+		z-index: 1;
+	}
+
+	.Uslugi a {
+		text-decoration: none;
+		color: #000;
+	}
+
+	.Uslugi a:hover {
+		transition: .30s ease-in-out;
+		background-color: #FCF5F3;
+		color: #30f;
+		font-size: 1.1925rem;
+		border-bottom: 1px solid #30f;
+	}
+
+	.bigNumbers-text {
+		font-size: 30px;
+	}
+
+
+	.work__list-item-text_type_line {
+		border-bottom: 2px solid #30f;
+		max-width: 2.0625rem;
+	}
+
+	.work__list-item-text_type_line_opacity_05 {
+		border-bottom: 2px solid rgb(51, 0, 255, 0.2);
+		max-width: 2.0625rem;
+	}
+
+	.work__list-item-text_type_line-width-100 {
+		border-bottom: 2px solid #30f;
+		width: 100%;
+		margin-top: -10px;
+	}
+
+	.work__list-item-text {
+		font-size: 1.25rem;
+		line-height: 1.75rem;
+		letter-spacing: -.04em;
+		min-height: 2.5rem;
+		color: rgba(0, 0, 0, .7);
+		/* margin-bottom: 0.5rem; */
+	}
+
+	.work__list-item:nth-child(2n) {
+		margin-right: 0;
+	}
+
+	@media (min-width: 991px) {
+		.vacancy-card__text-float-left {
+			margin-left: -10px;
+		}
+	}
+
+	.Base__lg-visible-block {
+		display: block;
+	}
+
+	.Base__lg-visible-none {
+		display: none;
+	}
+
+	@media (max-width: 991px) {
+		.safetyTitle-margin{
+			margin-top: 150px;
+		}
+		.media img {
+  justify-content: center;
+  align-items: center;
+			text-align: center;
+		}
+
+
+		.Base__lg-visible-block {
+			display: none;
+		}
+
+		.Base__lg-visible-none {
+			display: block;
+		}
+
+		.vacancy-card__text-float-left {
+			margin-top: -20px;
+		}
+
+		.Strong {
+			margin-bottom: -30px;
+		}
+	}
+
+	@media (max-width: 1200px) {
+		.work__list-item {
+			width: 100%;
+			/* margin-top: 1.75rem; */
+			margin-right: 0;
+		}
+	}
+
+	.work__list-item {
+		/* width: calc(50% - 2.1875rem); */
+		margin-right: 4.375rem;
+		/* margin-top: 5.3125rem; */
+	}
+
+	.work__list-item-text_type_line+.work__list-item-text_desc {
+		font-size: 1.125rem;
+		line-height: 1.625rem;
+		letter-spacing: -.04em;
+		font-style: italic;
+		display: block;
+	}
+
+	.work__list-item-text_desc:last-child {
+		margin-bottom: 0;
+	}
+
+	.work__list-item-text {
+		font-size: 1.25rem;
+		line-height: 1.75rem;
+		letter-spacing: -.04em;
+		min-height: 2.5rem;
+		color: rgba(0, 0, 0, .7);
+		margin-bottom: 0.5rem;
+	}
+
+
+	.hrefVacancies {
+		border: 6px solid #fff;
+		border-radius: 25px;
+		padding: 5px;
+		height: auto;
+		width: auto;
+		background-color: #F5F5F5;
+	}
+
+	.underMap {
+		/* border: 6px solid #fff; */
+		border-radius: 25px;
+		padding: 5px;
+		height: auto;
+		width: auto;
+		/* background-color: #F5F5F5; */
+	}
+
+	.underMap__background-blue {
+		text-align: center;
+		background-color: #2E5DD1;
+		color: #fff;
+		padding: 20px 0;
+		border-radius: 15px;
+		height: auto;
+		/* box-shadow: -20px -6px 30px rgba(18, 121, 255, 0.6); */
+		/* box-shadow: px 0 9px -7px rgba(255, 255, 255, 0.7); */
+	}
+
+
+	.underMap__background-blue-svg {
+		background-color: #0346f1;
+		padding: 15px 15px;
+		width: 45px;
+		border-radius: 12px;
+		margin: -40px 0 0 20px;
+	}
+
+
+	.hrefVacancies__background-blue {
+		text-align: center;
+		/* background-color: #4d649c; */
+		background-color: #2E5DD1;
+		color: #fff;
+		padding: 20px 0;
+		border-radius: 15px;
+		height: auto;
+		/* box-shadow: -20px -6px 30px rgba(18, 121, 255, 0.6); */
+		/* box-shadow: px 0 9px -7px rgba(255, 255, 255, 0.7); */
+	}
+
+	.hrefVacancies__background-blue_text-min {
+		color: rgba(245, 241, 241, 0.9);
+	}
+
+	.blockImage-powering>img {
+		opacity: 0.9;
+		border: 7px solid #fff;
+		border-radius: 60px;
+		z-index: -999;
+	}
+
+	.blockImage-poweringOwner>img {
+		opacity: 0.9;
+		border: 7px solid #fff;
+		border-radius: 350px;
+		z-index: -999;
+	}
+
+	.Yandex__cart {
+		opacity: 0.9;
+		border: 7px solid #fff;
+		border-radius: 60px;
+		z-index: -999;
+	}
+
+	.button_background__blue {
+		width: 100%;
+		background-color: #c6ddfe;
+		border: 1px solid #c6ddfe;
+		color: #5080C1;
+		font-weight: 600;
+		font-size: 1.0625rem;
+		line-height: 1.25rem;
+		letter-spacing: -.03em;
+		cursor: pointer;
+		-webkit-user-select: none;
+		text-decoration: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		border-radius: 0.75rem;
+		height: 3.3125rem;
+		padding: 0 1.25rem 0.0625rem;
+		display: inline-flex;
+		align-items: center;
+		justify-content: left;
+		transition: .15s ease-in-out;
+		position: relative;
+	}
+
+	.button_background__blue:hover {
+		transition: .15s ease-in-out;
+		background-color: #FCF5F3;
+		color: #5080C1;
+		font-size: 1.1925rem;
+		border: 1px solid #5080C1;
+	}
+
+	.hrefVacancies__button_background__blue {
+		background-color: #c6ddfe;
+		border: 1px solid #c6ddfe;
+		color: #5080C1;
+		font-weight: 600;
+		font-size: 1.0625rem;
+		line-height: 1.25rem;
+		letter-spacing: -.03em;
+		cursor: pointer;
+		-webkit-user-select: none;
+		text-decoration: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		border-radius: 1.5rem;
+		height: 3.3125rem;
+		padding: 0 1.25rem 0.0625rem;
+		display: inline-flex;
+		align-items: center;
+		justify-content: left;
+		transition: .15s ease-in-out;
+		position: relative;
+	}
+
+	.hrefVacancies__button_background__blue:hover {
+		transition: .15s ease-in-out;
+		background-color: #FCF5F3;
+		color: #5080C1;
+		font-size: 1.1925rem;
+		border: 1px solid #5080C1;
+	}
+
+	.blog-slider {
+		margin: auto;
+		z-index: -2;
+	}
+
+	.blog-slider:nth-child(3) {
+		width: 95%;
+		position: relative;
+		max-width: 800px;
+		margin: auto;
+		box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+		padding: 25px;
+		border-radius: 25px;
+		height: 400px;
+		z-index: -2;
+		background-color: aqua;
+	}
+
+
+	@media screen and (max-width: 928px) {
+		.blog-slider {
+			min-height: 500px;
+			height: auto;
+			margin: 180px auto 100px auto;
+		}
+
+		.probels {
+			display: block;
+		}
+	}
+
+	@media screen and (max-height: 500px) and (min-width: 992px) {
+		.blog-slider {
+			height: 350px;
+		}
+	}
+
+	.blog-slider__item {
+		display: flex;
+		align-items: center;
+	}
+
+	@media screen and (max-width: 928px) {
+		.blog-slider__item {
+			flex-direction: column;
+		}
+	}
+
+	.blog-slider__item.swiper-slide-active .blog-slider__img img {
+		/* opacity: 1; */
+		transition-delay: 0.3s;
+	}
+
+	.blog-slider__item.swiper-slide-active .blog-slider__content>* {
+		opacity: 1;
+		transform: none;
+	}
+
+	.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(1) {
+		transition-delay: 0.3s;
+	}
+
+	.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(2) {
+		transition-delay: 0.4s;
+	}
+
+	.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(3) {
+		transition-delay: 0.5s;
+	}
+
+	.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(4) {
+		transition-delay: 0.6s;
+	}
+
+	.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(5) {
+		transition-delay: 0.7s;
+	}
+
+	.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(6) {
+		transition-delay: 0.8s;
+	}
+
+	.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(7) {
+		transition-delay: 0.9s;
+	}
+
+	.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(8) {
+		transition-delay: 1s;
+	}
+
+	.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(9) {
+		transition-delay: 1.1s;
+	}
+
+	.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(10) {
+		transition-delay: 1.2s;
+	}
+
+	.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(11) {
+		transition-delay: 1.3s;
+	}
+
+	.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(12) {
+		transition-delay: 1.4s;
+	}
+
+	.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(13) {
+		transition-delay: 1.5s;
+	}
+
+	.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(14) {
+		transition-delay: 1.6s;
+	}
+
+	.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(15) {
+		transition-delay: 1.7s;
+	}
+
+	.blog-slider__img {
+		width: 300px;
+		flex-shrink: 0;
+		height: 355px;
+		box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.4);
+		border-radius: 20px;
+		transform: translateX(-80px);
+		overflow: hidden;
+	}
+
+	.blog-slider__img:after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 20px;
+		opacity: 0;
+	}
+
+	.blog-slider__img img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		opacity: 100;
+		border-radius: 20px;
+		transition: all 0.3s;
+	}
+
+	.imgMob {
+		display: none;
+	}
+
+	@media screen and (max-width: 928px) {
+		.imgMob {
+			display: inline-block;
+		}
+
+		.imgMob img {
+			float: left;
+		}
+
+		.imgMob .welcomeAvia {
+			float: right;
+			margin-left: 15px;
+			margin-top: 7px;
+		}
+
+	}
+
+	.TicketNone,
+	.TicketDate,
+	.flightDurationNone {
+		display: none;
+	}
+
+	.TicketDate {
+		margin-top: -40px;
+	}
+
+	.TicketBlogBlue {
+		height: 380px;
+		margin-top: 40px;
+		background-color: #2E5DD1;
+		color: #fff;
+		box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.4);
+		padding: 40px 50px;
+	}
+
+	.switch {
+		float: left;
+	}
+
+	.aa h4 {
+		padding-left: 60px;
+	}
+
+
+	@media screen and (max-width: 928px) {
+		.TicketBlogBlue {
+			height: auto;
+		}
+
+		.depart {
+			display: none;
+		}
+
+		.TicketDate {
+			float: right;
+			border-left: 1px solid yellow;
+		}
+
+		@media screen and (max-width: 655px) {
+			.TicketDate {
+				margin-top: -40px;
+				margin-bottom: -30px;
+				padding-top: 20px;
+				padding-bottom: 20px;
+			}
+
+			.TicketDate {
+				float: none;
+				border-right: 1px solid yellow;
+			}
+
+			.Hakasiya {
+				margin-top: -20px;
+			}
+
+			.TicketBlogBlue {
+				height: auto;
+				margin-top: 60px;
+			}
+		}
+
+		.TicketDate,
+		.TicketNone,
+		.flightDurationNone {
+			display: block;
+		}
+
+		.blog-slider__img img {
+			object-position: top;
+		}
+
+		.blog-slider-ticket {
+			margin-top: 100px;
+		}
+
+		.blog-slider__img h1,
+		.blog-slider__img h5,
+		.blog-slider__img .aa {
+			padding-left: 30px;
+		}
+
+		.TicketBlock {
+			display: none;
+		}
+
+		.blog-slider__img {
+			transform: translateY(-30%);
+			width: 90%;
+		}
+	}
+
+	.bigNumbers {
+		display: none;
+	}
+
+	@media screen and (max-width: 576px) {
+		.blog-slider__img {
+			width: 95%;
+		}
+	}
+
+	@media screen and (max-height: 500px) and (min-width: 992px) {
+		.blog-slider__img {
+			height: 270px;
+		}
+	}
+
+	.blog-slider__content {
+		padding-right: 25px;
+	}
+
+	@media screen and (max-width: 928px) {
+		.blog-slider__content {
+			margin-top: -80px;
+			text-align: center;
+			padding: 0 30px;
+		}
+	}
+
+	@media screen and (max-width: 928px) {
+		.blog-slider__item .swiper-slide {
+			height: 90px;
+		}
+	}
+
+	@media screen and (max-width: 576px) {
+		.blog-slider__content {
+			padding: 0;
+		}
+	}
+
+	.blog-slider__content>* {
+		opacity: 100;
+		transform: translateY(25px);
+		transition: all 0.4s;
+	}
+
+	.blog-slider__code {
+		color: #7b7992;
+		margin-bottom: 15px;
+		display: block;
+		font-weight: 500;
+	}
+
+	.blog-slider__title {
+		font-size: 24px;
+		font-weight: 700;
+		color: #0d0925;
+		margin-bottom: 20px;
+	}
+
+	.blog-slider__text {
+		color: #4e4a67;
+		margin-bottom: 30px;
+		line-height: 1.5em;
+	}
+
+	.blog-slider__button {
+		cursor: pointer;
+		transition: all 0.4s;
+
+		display: inline-flex;
+		border-radius: 15px;
+
+		text-decoration: none;
+		font-weight: 500;
+		justify-content: center;
+		text-align: center;
+		letter-spacing: 1px;
+		z-index: -1;
+		margin-bottom: 20px;
+	}
+
+	.blog-slider__button a {
+		background-color: #FE7030;
+		transition: all 0.3s;
+
+		cursor: pointer;
+		border: 1px solid #FE7030;
+		padding: 16px 36px;
+		border-radius: 15px;
+		color: #fff;
+		box-shadow: 0px 0px 40px rgba(252, 56, 56, 0.4);
+	}
+
+	.blog-slider__button:hover a {
+		color: #FE7030;
+		background-color: #fff;
+		border: 1px solid #FE7030;
+		/* transition: all 0.3s; */
+
+	}
+
+	.blog-slider .swiper-container-horizontal>.swiper-pagination-bullets,
+	.blog-slider .swiper-pagination-custom,
+	.blog-slider .swiper-pagination-fraction {
+		bottom: 10px;
+		left: 0;
+		width: 100%;
+	}
+
+	.blog-slider__pagination {
+		position: absolute;
+		/* z-index: -10; */
+		right: 20px;
+		width: 11px !important;
+		text-align: center;
+		left: auto !important;
+		top: 50%;
+		bottom: auto !important;
+	}
+
+	.blog-slider__pagination .swiper-pagination-bullet {
+		width: 11px;
+		height: 11px;
+		display: block;
+		border-radius: 10px;
+		background: #062744;
+		opacity: 0.2;
+		transition: all 0.3s;
+	}
+
+	.blog-slider__pagination .swiper-pagination-bullet-active {
+		opacity: 1;
+		background: #fd3838;
+		height: 30px;
+		box-shadow: 0px 0px 20px rgba(252, 56, 56, 0.3);
+	}
+
+	.a {
+		background-color: #fefefe;
+		width: 100%;
+		position: relative;
+		max-width: 800px;
+		margin: auto;
+		box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+		padding: 25px 0px 40px 0px;
+		border-radius: 25px;
+		transition: all 0.3s;
+	}
+
+	.aMargin {
+		margin-top: 50px;
+	}
+
+	.OpenBlogs a,
+	.CloseBlogs a,
+	.buyTicket a {
+		background-color: #fff;
+		color: #FE7030;
+	}
+
+	.OpenBlogs a,
+	.CloseBlogs a,
+	.buyTicket a {
+		color: #FE7030;
+		text-decoration: none;
+	}
+
+	.OpenTicket a {
+		color: #fff;
+		text-decoration: none;
+	}
+
+	.OpenTicket a {
+		color: #fff;
+		text-decoration: none;
+	}
+
+	.OpenBlogs:hover a,
+	.CloseBlogs:hover a,
+	.buyTicket:hover a {
+		background-color: #FE7030;
+		color: #fff;
+	}
+
+	.ticket {
+		font-size: 15px;
+	}
+
+	#qwe {
+		transform: scale(1.5);
+		opacity: 0.9;
+		cursor: pointer;
+		margin-right: 5px;
+		margin-top: 5px;
+	}
+
+	.switch {
+		position: relative;
+		display: inline-block;
+		width: 50px;
+		height: 24px;
+	}
+
+	.switch input {
+		display: none;
+	}
+
+	.slider {
+		position: absolute;
+		cursor: pointer;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #ccc;
+		-webkit-transition: .4s;
+		transition: .4s;
+	}
+
+	.slider:before {
+		position: absolute;
+		content: "";
+		height: 16px;
+		width: 16px;
+		left: 4px;
+		bottom: 4px;
+		background-color: white;
+		-webkit-transition: .4s;
+		transition: .4s;
+	}
+
+	input:checked+.slider {
+		background-color: #2196F3;
+	}
+
+	input:focus+.slider {
+		box-shadow: 0 0 1px #2196F3;
+	}
+
+	input:checked+.slider:before {
+		-webkit-transform: translateX(26px);
+		-ms-transform: translateX(26px);
+		transform: translateX(26px);
+	}
+
+	/* Rounded sliders */
+	.slider.round {
+		border-radius: 34px;
+	}
+
+	.slider.round:before {
+		border-radius: 50%;
+	}
+
+	.numbers-big-blue {
+		font-style: normal;
+		color: #30f;
+		font-weight: 600;
+		font-size: 2.15rem;
+		line-height: 2.625rem;
+		letter-spacing: -.04em;
+	}
+
+	.blockAboutCompany_text {
+		font-weight: 600;
+		font-size: 2.25rem;
+		line-height: 2.625rem;
+		letter-spacing: -.04em;
+		margin-bottom: 3.275rem;
+		position: relative;
+		z-index: 1;
+		/* margin-left: 0.525rem; */
+
+	}
+
+	@media only screen and (max-device-width: 1238px) {
+		.numbers_visible_910-svg {
+			margin-top: -100px;
+		}
+	}
+
+	.vacancy-card__title {
+		font-size: 1.5rem;
+		line-height: 1.75rem;
+		letter-spacing: -.035em;
+		margin-top: 1rem;
+		font-weight: 700;
+	}
+
+	.vacancy-card__text_description {
+		color: rgba(0, 0, 0, .6);
+		/* margin-bottom: 1.5625rem; */
+	}
+
+	.vacancy-card__text {
+		font-size: 1.25rem;
+		line-height: 1.625rem;
+		letter-spacing: -.04em;
+	}
+
+	.plast__text {
+		font-size: 38px;
+		color: #000;
+		font-weight: 6000;
+		line-height: 2.25rem;
+		letter-spacing: -.05em;
+
+	}
+
+
+	.header__text {
+		font-weight: 300;
+		font-size: 2.0875rem;
+		line-height: 2.275rem;
+		text-align: left;
+		letter-spacing: -.04em;
+	}
+
+	@keyframes gg-doc {
+		0% {
+			left: -16px
+		}
+
+		60%,
+		to {
+			left: 0
+		}
+	}
+
+	.gg-loadbar-doc {
+		display: block;
+		position: relative;
+		box-sizing: border-box;
+		transform: scale(var(--ggs, 1));
+		border: 2px solid transparent;
+		box-shadow: 0 0 0 2px;
+		border-radius: 1px;
+		width: 12px;
+		height: 14px;
+		overflow: hidden
+	}
+
+	.gg-loadbar-doc::after,
+	.gg-loadbar-doc::before {
+		content: "";
+		display: block;
+		position: absolute;
+		box-sizing: border-box;
+		height: 2px;
+		background: currentColor;
+		animation: gg-doc 1s linear infinite alternate
+	}
+
+	.gg-loadbar-doc::before {
+		width: 14px;
+		box-shadow: -4px 4px 0
+	}
+
+	.gg-loadbar-doc::after {
+		width: 5px;
+		top: 8px
+	}
+
+	@media screen and (max-width: 576px) {
+		.bigNumbers-text-margin {
+			margin-top: 20px;
+		}
+
+	}
+
+	.vigodi-text-md {
+		display: none;
+	}
+
+
+
+	.button_background__blue {
+		width: 100%;
+		background-color: #c6ddfe;
+		/* url('{% static ".jpg" %}') */
+		/* background: url("/static/EtalonSite/images/arrow-right.svg") right 51% / 30% 60% no-repeat; */
+
+		border: 1px solid #c6ddfe;
+		color: #5080C1;
+		font-weight: 600;
+		font-size: 1.0625rem;
+		line-height: 1.25rem;
+		letter-spacing: -.03em;
+		cursor: pointer;
+		-webkit-user-select: none;
+		text-decoration: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		border-radius: 0.75rem;
+		height: 3.3125rem;
+		padding: 0 1.25rem 0.0625rem;
+		display: inline-flex;
+		align-items: center;
+		justify-content: left;
+		transition: .15s ease-in-out;
+		position: relative;
+	}
+
+	.button_background__blue:hover {
+		transition: .15s ease-in-out;
+		background-color: #FCF5F3;
+		color: #5080C1;
+		font-size: 1.1925rem;
+		border: 1px solid #5080C1;
+	}
+
+	.video_10Years {
+		margin-top: -93.36px;
+	}
+
+	.BackgroundVideo__background__HiFeiReo {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 0;
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		background-position: center;
+		pointer-events: none;
+	}
+
+	.BackgroundVideo__background__HiFeiReo video,
+	.BackgroundVideo__background__HiFeiReo>div {
+		background-color: transparent;
+		object-fit: cover;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	video,
+	.VideoEmbed__wrapper__2hfdmuhp {
+		background: transparent;
+		object-fit: cover;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.Cover__wrapper__2QIj7Vhy {
+		position: relative;
+		width: 100%;
+		min-height: 100vh;
+		display: flex;
+		align-items: flex-end;
+		margin-bottom: -100px;
+		justify-content: center;
+	}
+
+	.Cover__bg__229t47d6 {
+		position: absolute;
+		top: -83.40px;
+		/* top: -200px; */
+		left: 0;
+		z-index: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+
+	.site-header {
+		background-color: rgb(246, 246, 246, 0.8);
+		transition: all 1.5s ease;
+
+	}
+
+	.citare {
+		/* font-style: italic; */
+		font-size: 1.75rem;
+		line-height: 1.65rem;
+		color: rgb(0, 0, 0, .9);
+		font-weight: 700;
+		font-size: 1.5rem;
+		margin-top: -70px;
+		line-height: 1.75rem;
+		letter-spacing: -.035em;
+	}
+
+	.WhyChooseUs {
+		font-weight: 700;
+		font-size: 5.3rem;
+		line-height: 4.875rem;
+		letter-spacing: -.05em;
+		margin-bottom: 0.225rem;
+		color: #000;
+
+		/* margin-left: 0px; */
+		position: relative;
+		z-index: 1;
+	}
+
+	.WhyChooseUs2 {
+		font-weight: 700;
+		font-size: 3.3rem;
+		color: #000;
+		line-height: 3.875rem;
+		letter-spacing: -.05em;
+		margin-bottom: 0.225rem;
+		/* margin-left: 0px; */
+		position: relative;
+		z-index: 1;
+	}
+
+	.safetyTitle {
+		margin-top: 50px;
+	}
+
+
+	#Care {
+		margin-top: 35px;
+	}
+
+	.cart {
+		display: none;
+	}
+
+	.cart__link {
+		font-size: 1.125rem;
+		line-height: 1.625rem;
+		letter-spacing: -.04em;
+		cursor: pointer;
+		color: rgba(0, 0, 0, .7);
+		border-bottom: 1px dashed rgba(0, 0, 0, .3);
+		transition: border-color .15s ease-in-out;
+	}
+	.cart__link:hover {
+		border-bottom: 1px dashed rgba(0, 0, 0, .0);
+
+	}
+
+	._link {
+		font-size: 1.125rem;
+		line-height: 1.625rem;
+		letter-spacing: -.04em;
+		cursor: pointer;
+		color: rgba(0, 0, 0, .7);
+		border-bottom: 1px dashed rgba(0, 0, 0, .3);
+		transition: border-color 2.15s ease-in-out;
+	}
+	._link:hover {
+		border-bottom: none;
+		transition: border-color 2.15s ease-in-out;
+	}
+
+	
+
+	.depart__title {
+		text-align: center;
+		margin-top: 200px;
+	}
+
+tr{
+	border: 1px solid #30f;
+}
+	.pageText span sub {
+		font-weight: 600;
+		font-size: 0.625rem;
+		line-height: 0.75rem;
+		letter-spacing: -.04em;
+		margin-left: -15.5rem;
+	}
+
+	sub {
+		vertical-align: sub;
+		font-size: smaller;
+
+	}
+
+	.vigodiText-float-right {
+		margin-top: 30px;
+	}
+
+	.line__podkov {
+		display: none;
+	}
+
+	@media (max-width: 767px) {
+		
+		.pageTitle {
+			font-size: 3.25rem;
+			line-height: 3.25rem;
+			margin-bottom: 1.25rem;
+		}
+
+		.liner:after,
+		.liner__end:after,
+		.liner::before,
+		.liner__end::before {
+			/* content: '';
+		flex-grow: 1;
+		height: 2px;
+		background: #F6F6F6;
+		min-width: 20px; */
+			display: none;
+		}
+
+		.liner,
+		.liner__end {
+			margin-left: 10px;
+		}
+
+
+		.line__podkov {
+			display: block;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+		.vigodiText-float-right {
+			margin-top: 15px;
+			margin-bottom: 20px;
+		}
+
+		.pageText span sub {
+			margin-left: -11.3rem;
+		}
+
+		.depart__title {
+			text-align: left;
+		}
+
+		.Cover__bg__229t47d6 {
+			position: absolute;
+			top: -69px;
+			left: 0;
+		}
+
+		.text-767-margin {
+			margin-left: 0px;
+		}
+
+
+		.pageText {
+			font-weight: 600;
+			/* line-height: 2rem; */
+			letter-spacing: -.04em;
+			line-height: 2.25rem;
+			font-size: 1.75rem;
+			line-height: 130%;
+		}
+
+		.vigodi-display-none {
+			display: none;
+		}
+
+		.vigodi-text-md {
+			display: block;
+		}
+
+
+
+
+
+
+
+		.bigNumbers-text {
+			font-size: 24px;
+			text-align: left;
+		}
+
+		.importantFigures {
+			display: none;
+		}
+
+		.xmao-item {
+			margin-top: 10px;
+		}
+
+		.bigNumbers {
+			display: block;
+		}
+
+		.vigodiText-float-right {
+			float: right;
+		}
+
+
+		.vigodi-float-right {
+			margin-top: 0px;
+		}
+	}
+
+
+	.above {
+		position: relative;
+		display: inline-block;
+		margin-bottom: 1.5em;
+	}
+
+	.above::before {
+		position: absolute;
+		top: 90%;
+		height: 6px;
+		width: 100%;
+		/* border: 1.5px currentcolor solid; */
+		border-top: 0;
+		content: "";
+	}
+
+	.above .below {
+		position: absolute;
+		/* width: 100%; */
+		left: 0;
+		top: 100%;
+		text-align: left;
+		font-weight: 600;
+		font-size: 0.625rem;
+		line-height: 14px;
+		/* letter-spacing: -.04em; */
+		vertical-align: sub;
+		font-size: 12px;
+		color: #000;
+	}
+
+	.ticker__item-text{
+		background-color: #1E2345;
+		color: #fff;	
+		border: 1px solid #c6ddfe;
+		font-weight: 600;
+		font-size: 3.0625rem;
+		line-height: 2.25rem;
+		letter-spacing: -.03em;
+		cursor: pointer;
+		-webkit-user-select: none;
+		text-decoration: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		border-radius: 0.75rem;
+		/* height: 3.3125rem; */
+		padding: 0 1.25rem 0.0625rem;
+		display: inline-flex;
+		align-items: center;
+		justify-content: left;
+		transition: .15s ease-in-out;
+	}
+
+	
+.main-roller{
+  /* height:100vh; */
+  width:100%;  
+  align-items:center;
+  /* padding: 50vh auto; */
+  padding-bottom: 25vh;
+  background-color: #30f;
+  justify-content:center;
+  text-align:center;
+}
+.main-roller h1{
+  text-align:center;
+  text-transform: uppercase;
+  padding-top: 25vh;
+
+  color: #F1FAEE; 
+  font-size: 4rem;
+}
+
+.roller{
+  height: 4.125rem;
+  line-height: 4rem;
+  position: relative;
+  overflow: hidden; 
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #A8DADC;
+}
+
+
+#spare-time{
+  font-size: 1rem;
+  font-style: italic;
+  letter-spacing: 1rem;
+  margin-top: 0;
+  color: #A8DADC;
+  
+}
+
+.roller #rolltext {
+  position: absolute;
+  top: 0;
+  animation: slide 10s infinite;  
+  font-size: 2rem;
+  font-style: italic;
+  letter-spacing: 1rem;
+  margin-top: 0;
+  color: #A8DADC;
+}
+
+@keyframes slide {
+  0%{
+    top:0;
+  }
+	16%{
+    top: -4rem;    
+  }
+  32%{
+    top: -8rem;
+  }
+  48%{
+    top: -12rem;
+  }
+  64%{
+    top: -16rem;
+  }
+  80%{
+    top: -20rem;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .main-roller h1{
+  text-align:center;
+  text-transform: uppercase;
+  color: #F5F5F5; 
+  font-size: 2.125rem;
+}
+  
+  .roller{
+  height: 2.6rem; 
+  line-height: 2.125rem;  
+  }
+  
+  #spare-time {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+  }
+  
+  .roller #rolltext {  
+  animation: slide-mob 5s infinite;  
+}
+  
+  @keyframes slide-mob {
+  0%{
+    top:0;
+  }
+  25%{
+    top: -2.125rem;    
+  }
+  50%{
+    top: -4.25rem;
+  }
+  72.5%{
+    top: -6.375rem;
+  }
+}
+}
+</style>
+<!-- <div class="Cover__wrapper__2QIj7Vhy  Cover__wrapper--has-scrollpointer__2lCSfPAl">
+	<div class="Cover__bg__229t47d6" style="opacity: 1;">
+		<div class="BackgroundVideo__background__HiFeiReo">
+			<div class="VideoEmbed__wrapper__2hfdmuhp">
+				
+			</div>
+		</div>
+	</div>
+</div> -->
+
+<div class="container-fluid plast__two" style="margin-top: 100px;">
+	<div class="row">
+		<div class="col-10 col-lg-10 offset-0 offset-lg-1">
+			<h1 class="pageTitle" style="margin-bottom: 20px">
+				Транспортная компания в ХМАО-Югре<span style=" color: #30f;">.</span>
+			</h1>
+			<p class="pageText pageText_main"><span class="font-color-blue"
+					style=" color: #30f;">{{today.year|slugify|add:"-2010"}}</span> лет успешной работы
+					<span
+					class="font-color-blue above" style=" color: #30f;">264 <span
+						style="color: #000;">сотрудника.</span><span class="below">задействовано на объектах
+						КАТКонефть</span></span>
+					</span>
+			</p>
+		</div>
+	</div>
+</div>
+<div class="container-fluid plast__two" style="margin-top: -50px; margin-bottom: 50px;">
+	<div class="row">
+		<div class="col offset-0 offset-lg-1 Uslugi__text" style="float: left; z-index: 22; margin-top: 80px;">
+			<h2 style="color: #30f;" class="vacancy-card__title">
+				Автотранспортные услуги</h2>
+
+			<p class="vacancy-card__text vacancy-card__text_description"><span>
+					Итерационная перевозка грузов</span></p>
+			<div style="margin-top: -43px;"
+				class="work__list-item-text work__list-item-text_title work__list-item-text_type_line_opacity_05">
+			</div>
+			<h2 style="color: #30f;" class="vacancy-card__title">
+				Подготовка</h2>
+
+			<p class="vacancy-card__text vacancy-card__text_description"><span>
+					Планирование маршрута транспортировки
+					с подбором транспортных средств
+				</span></p>
+			<div style="margin-top: -43px;"
+				class="work__list-item-text work__list-item-text_title work__list-item-text_type_line_opacity_05">
+			</div>
+			<h2 style="color: #30f;" class="vacancy-card__title">
+				Транспортировка
+			</h2>
+
+			<p class="vacancy-card__text vacancy-card__text_description"><span>
+					Перевозка оборудования с интерактивным
+					мониторингом текущего нахождения груза
+				</span></p>
+
+		</div>
+		<div class="offset-0 offset-lg-1 col-12 col-lg-6 blockImage-powering" style=" float: right; margin-top: 30px;">
+			<img src="{% static 'EtalonSite/images/Автопарк/231132123.webp'%}" class=" img-fluid "
+				alt="Отправляемся на работу">
+			<div class="hrefVacancies-shadow mx-auto" style="width: 1px; height: 1px;background-color: rgba(71, 69, 204, 0.6);
+				 box-shadow:  0px -110px 190px 170px rgb(51,0,255,0.6); border-radius: 40px;">
+			</div>
+
+		</div>
+	</div>
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="ticker" style="margin-bottom: 100px;">
+	<div class="ticker__list">
+		<div class="ticker__item" style="margin-left: -10px;">
+			<div class="tag">
+				<p>
+					Конкурентный уровень оплаты труда
+</p>
+				</div>
+</div>
+		<div class="ticker__item">
+			<div class="tag">
+				<p>
+					Социальный пакет
+					льготы компенсации	</p>
+				</div>
+</div>
+		<div class="ticker__item">
+			<div class="tag">
+				<p>
+					Ежегодная медкомиссия
+					диспансеризация</p>
+				</div>
+</div>
+		<div class="ticker__item">
+			<div class="tag">
+				<p>
+					Повышение квалификации
+					обучения</p>
+				</div>
+</div>
+		<div class="ticker__item">
+			<div class="tag">
+				<p>
+					Комфортные условия
+					межсменного отдыха</p>
+				</div>
+</div>
+		<div class="ticker__item">
+			<div class="tag">
+				<p>
+					Обновлённый автопарк	
+
+				</p>
+				</div>
+</div>
+				
+	</div>
+</div>
+
+<center>
+
+	<div class="col-10 col-md-8 plast" style="color: #000; text-align: left; margin-top: 150px;">
+		<p class="plast__text"><span><span style="color: #30f;">
+					Мы предлагаем</span> выполнение подготовительно-заключительных работ для обеспечивания
+				гидравлического
+				разрыва пласта
+			</span></p>
+		<div class="row">
+			<div class="col plast__block">
+
+				<p class="vacancy-card__text vacancy-card__text_description"><span>
+						<span class="numbers-big-blue">1 <br></span>
+						Завоз и вывоз оборудования, монтаж емкостей
+						для ГРП, подвоз проппанта
+					</span></p>
+			</div>
+			<div class="col plast__block">
+				<p class="vacancy-card__text vacancy-card__text_description"><span>
+						<span class="numbers-big-blue">2 <br></span>
+						Затарка емкостей технологической жидкостью </span></p>
+			</div>
+			<div class="col-11 plast__block">
+
+				<p class="vacancy-card__text vacancy-card__text_description"><span>
+						<span class="numbers-big-blue">3 <br></span>
+						Получение подвоз солевого раствора
+						вакуумными машинами, сопровождение ГРП
+						спецтехникой</span></p>
+			</div>
+		</div>
+</center>
+
+
+
+<div class="container-fluid Uslugi plast__two" style="margin-top: 150px;">
+	<div class="row">
+		<div class="col-10 offset-0 offset-lg-1">
+			<h1 class="pageTitle" style=" margin-top: 50px;">
+				Услуги<span style=" color: #30f;">.</span>
+			</h1>
+			<br>
+			</h2>
+		</div>
+		<div style="margin-top: 20px; margin-bottom: 30px;" class="col-12 col-lg-10 offset-0 offset-lg-1">
+			<div class="col blockImage-powering">
+				<img src="{% static 'EtalonSite/images/Рабочие моменты/4.webp'%}" alt="Работа на месторождении"
+					class="img-fluid">
+			</div>
+		</div>
+		<div class="col-10 offset-0 offset-lg-1">
+			<p class="vacancy-card__text vacancy-card__text_description"><span>
+					Комплексные логистические решения в области транспортировки грузов,
+					погрузочно-разгрузочные работы, перевозка технологических жидкостей и
+					отходов нефтегазового сектора по средствам специального
+					технического оборудования и собственного автомобильного парка.
+				</span>
+				</p>
+			<div class="row">
+				{% for service in services %}
+				<div class="col">
+					<a href="mailto:disp2010@etalonts.ru?subject=Интерес к услуге оказываемой {{service.title}} &body=Здравствуйте! Меня заинтересовла услуга оказываемая {{service.title}}. Расскажите пожалуйста подробнее о условиях и деталях"
+					target="_blank">
+
+						<h2 class="vacancy-card__title"><span class="numbers-big-blue">{{service.id}}. <br></span>
+							{{service.title}}.</h2>
+
+						</a>
+					</div>
+					
+					{% endfor %}
+<!-- 
+					<div class="col offset-0">
+					<a href="mailto:disp2010@etalonts.ru?subject=Интерес к услуге оказываемой цементировочными агрегатами &body=Здравствуйте! Меня заинтересовла услуга оказываемая цементировочными агрегатами. Расскажите пожалуйста подробнее о условиях и деталях"
+						target="_blank">
+
+						<h2 class="vacancy-card__title"><span class="numbers-big-blue">2. <br></span>
+							Цементировочные агрегаты.</h2>
+					</a>
+				</div>
+
+				<div class="col offset-0">
+					<a href="mailto:disp2010@etalonts.ru?subject=Интерес к услуге оказываемой вакуумными машинами&body=Здравствуйте! Меня заинтересовла услуга оказываемая вакуумными машинами. Расскажите пожалуйста подробнее о условиях и деталях"
+						target="_blank">
+
+						<h2 class="vacancy-card__title"><span class="numbers-big-blue">3. <br></span>
+							Вакуумные
+							машины.</h2>
+					</a>
+
+				</div>
+
+				<div class="col offset-0">
+					<a href="mailto:disp2010@etalonts.ru?subject=Интерес к услуге оказываемой автоцистернами для перевозки технологических жидкостей &body=Здравствуйте! Меня заинтересовла услуга оказываемая автоцистернами для перевозки технологических жидкостей. Расскажите пожалуйста подробнее о условиях и деталях"
+						target="_blank">
+
+						<h2 class="vacancy-card__title"><span class="numbers-big-blue">4. <br></span>
+							Автоцистерны для перевозки технологических жидкостей.</h2>
+					</a>
+				</div>
+
+				<div class="col offset-0">
+					<a href="mailto:disp2010@etalonts.ru?subject=Интерес к услуге оказываемой вездеходной грузоперевозящей техникой &body=Здравствуйте! Меня заинтересовла услуга оказываемая вездеходной грузоперевозящей техникой. Расскажите пожалуйста подробнее о условиях и деталях"
+						target="_blank">
+
+						<h2 class="vacancy-card__title"><span class="numbers-big-blue">5. <br></span> Вездеходная
+							грузоперевозящая техника.</h2>
+					</a>
+
+				</div>
+
+				<div class="col offset-0">
+					<a href="mailto:disp2010@etalonts.ru?subject=Интерес к услуге оказываемой тракторной техникой &body=Здравствуйте! Меня заинтересовла услуга оказываемая тракторной техникой. Расскажите пожалуйста подробнее о условиях и деталях"
+						target="_blank">
+
+						<h2 class="vacancy-card__title"><span class="numbers-big-blue">6. <br></span> Тракторная
+							техника.</h2>
+					</a>
+				</div> -->
+
+			</div>
+			<div class="work__list-item">
+				<div class="work__list-item-text work__list-item-text_title work__list-item-text_type_line">
+
+				</div>
+				<div class="work__list-item-text work__list-item-text_desc">
+					<p>Если вас заинтересовала услуга, кликните на неё и мы с вами всё обсудим.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+</div>
+
+
+<div class="container-fluid plast__two" style="margin-top:250px;">
+	<div class="row">
+		<div class="col-10 offset-0 offset-lg-1">
+			<h1 class="pageTitle Strong">
+				Преимущества<span style=" color: #30f;">.</span>
+			</h1>
+			<br>
+		</div>
+		<div class="row" style="margin-top: 25px;">
+			<div class="col-12 col-lg-4 offset-0 offset-lg-1">
+				<h2 class="vacancy-card__title" style="color: #30f;"><img
+						src="{% static '/EtalonSite/images/barrels.svg' %}" alt="Современное оборудование"
+						class="img-fluid" style="width: 50px; margin: 10px auto;"><br>
+					Современное оборудование</h2>
+
+				<p class="vacancy-card__text vacancy-card__text_description"><span>
+						Использование современного оборудования,
+						наличие скоростных мотопомп, термосных бочек
+						с возможностью работы без ппу в зимнее время
+					</span></p>
+				<h2 class="vacancy-card__title" style="color: #30f;"><img
+						src="{% static '/EtalonSite/images/truck.svg' %}" alt="Собственный автомобильный парк."
+						class="img-fluid" style="width: 50px; margin: 10px auto;"><br>
+					Собственный автомобильный парк</h2>
+
+				<p class="vacancy-card__text vacancy-card__text_description"><span>
+						Ежегодное обновление автомобильного парка,
+						жесткий контроль и замена каждой единицы техники в
+						течение 5 лет</span></p>
+
+					<h2 class="vacancy-card__title " style="color: #30f;"><img
+							src="{% static '/EtalonSite/images/repair.svg' %}" alt="Производственная база"
+							class="img-fluid" style="width: 50px; margin: 10px auto;"><br>
+						Производственная база</h2>
+
+					<p class="vacancy-card__text vacancy-card__text_description"><span>
+							Собственный производственный цех для
+							оказания текущего ремонта транспортных
+							средств</span></p>
+				<!-- </div> -->
+			</div>
+
+			<div class="offset-0 offset-lg-1 col-12 col-lg-6  blockImage-powering"
+				style="z-index: -22; float: right; margin-top: 30px;">
+				<img src="{% static 'EtalonSite/images/Автопарк/5.webp'%}" class="img-fluid" alt="Автопарк"
+					style="padding-top: 0px;">
+				<div class="hrefVacancies-shadow mx-auto" style="width: 1px; height: 1px;background-color: rgba(71, 69, 204, 0.6);
+			 box-shadow:  0px -110px 190px 170px rgb(51,0,255,0.6); border-radius: 40px;">
+				</div>
+				<!-- <div class="row Base__lg-visible-block"> -->
+					<!-- <div class="col-10 offset-1">
+
+						<h2 class="vacancy-card__title" style="color: #30f;"><img
+								src="{% static '/EtalonSite/images/repair.svg' %}" alt="Производственная база"
+								class="img-fluid" style="width: 50px; margin: 10px auto;"><br>
+							Производственная база.</h2>
+
+						<p class="vacancy-card__text vacancy-card__text_description"><span>
+								Собственный производственный цех для
+								оказания текущего ремонта транспортных
+								средств. </span></p>
+					</div> -->
+				<!-- </div> -->
+			</div>
+
+
+		</div>
+	</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="container-fluid plast__two" style="margin-top: 200px;">
+	<div class="row">
+		<div class="col-12 col-md-7 offset-0 offset-lg-1">
+			<h1 class="pageTitle">
+				Выгоды заказчика<span style=" color: #30f;">.</span>
+			</h1>
+			<br>
+			<p class="vigodi-text-md  vacancy-card__text vacancy-card__text_description">
+				Эффективная реализация технического задания с учетом
+				нормативных требований и конструктивных пожеланий заказчика
+			</p>
+		</div>
+		<div style="margin-left: -10px; margin-top: 25px;"
+			class="offset-1 offset-lg-0 col-11 col-md-4 offset-md-0 vigodiText-float-right" style="margin-top: 30px;">
+			<p class="vigodi-display-none vigodi-text-lg  vacancy-card__text vacancy-card__text_description">
+				Эффективная реализация технического задания с учетом
+				нормативных требований и конструктивных пожеланий заказчика
+			</p>
+		</div>
+
+		<div class="row">
+			<div class="col-11 col-md-5 col-lg-5 offset-0 offset-lg-1">
+				<div class="row text-767-margin">
+
+					<div class="col-11 col-sm-10 col-md-5 col-lg-6 offset-0 offset-md-0">
+
+						<h2 class="vacancy-card__title" style="color: #30f;"><img
+								src="{% static '/EtalonSite/images/handshake.svg' %}" alt="Прозрачный бизнес"
+								class="img-fluid" style="width: 50px; margin: 10px auto;"><br>
+							Прозрачный бизнес</h2>
+
+						<p class="vacancy-card__text vacancy-card__text_description"><span>
+								Честность при ведении бизнеса</span></p>
+					</div>
+
+					<div class="col-11 col-sm-10 col-md-5 col-lg-6 offset-lg-0  offset-0 offset-md-2">
+						<h2 class="vacancy-card__title" style="color: #30f;"><img
+								src="{% static '/EtalonSite/images/discount.svg' %}" alt="Партнерские скидки"
+								class="img-fluid" style="width: 50px; margin: 10px auto;"><br>
+							Партнерские скидки</h2>
+
+						<p class="vacancy-card__text vacancy-card__text_description"><span>
+								Персональные предложения и
+								выгодные условия от объема</span></p>
+
+					</div>
+					<div class="col-11 col-sm-10 col-md-5 col-lg-6 offset-0 offset-lg-0">
+
+						<h2 class="vacancy-card__title" style="color: #30f;"><img
+								src="{% static '/EtalonSite/images/customer.svg' %}" alt="Индивидуальный подход"
+								class="img-fluid" style="width: 50px; margin: 10px auto;"><br>
+							Индивидуальный подход</h2>
+
+						<p class="vacancy-card__text vacancy-card__text_description"><span>
+								Выполнение всех требований и
+								индивидуальных пожеланий заказчика
+							</span></p>
+					</div>
+					<div class="col-11 col-sm-10 col-md-5 col-lg-6 offset-lg-0  offset-0 offset-md-2">
+						<h2 class="vacancy-card__title" style="color: #30f;"><span class=""><img
+									src="{% static '/EtalonSite/images/bulb.svg' %}" alt="Подкованность"
+									class="img-fluid" style="width: 50px; margin: 10px auto;"> <br>
+								Подкованность</h2>
+
+						<p class="vacancy-card__text vacancy-card__text_description"><span>
+								Возможность получения пропусков
+								на всех месторождениях</span></p>
+
+						<div style="margin-top: -23px; max-width: 4.1230rem;"
+							class="line__podkov work__list-item-text work__list-item-text_title work__list-item-text_type_line_opacity_05">
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="col-11 col-md-5 text-767-margin vigodi-float-right" style="text-align: left;">
+				<div class="row text-767-margin">
+					<div class="col-11 offset-0 col-md-9 offset-md-5">
+
+
+						<h2 class="vacancy-card__title numbers-big-blue">
+							Квалификация персонала</h2>
+
+						<p class="vacancy-card__text vacancy-card__text_description"><span>
+								Высокий уровень профессиональных компетенций
+								сотрудников</span></p>
+						<div style="margin-top: -43px;"
+							class="work__list-item-text work__list-item-text_title work__list-item-text_type_line_opacity_05">
+						</div>
+						<h2 class="vacancy-card__title numbers-big-blue">
+							Сокращение затрат</h2>
+
+						<p class="vacancy-card__text vacancy-card__text_description"><span>
+								Минимизация расходов за счет оперативного выполнения
+								работ и сокращения количества привлекаемой техники</span></p>
+						<div style="margin-top: -43px;"
+							class="work__list-item-text work__list-item-text_title work__list-item-text_type_line_opacity_05">
+						</div>
+						<h2 class="vacancy-card__title numbers-big-blue">
+							Контроль выполнения работ</h2>
+
+						<p class="vacancy-card__text vacancy-card__text_description"><span>
+								Постоянный контроль над выполнением работ,
+								сопровождение и коммуникации с заказчиком</span></p>
+						<div style="margin-top: -43px;"
+							class="work__list-item-text work__list-item-text_title work__list-item-text_type_line_opacity_05">
+						</div>
+						<h2 class="vacancy-card__title numbers-big-blue">
+							Аудит безопасности</h2>
+
+						<p class="vacancy-card__text vacancy-card__text_description"><span>
+								Соблюдение требований и нормативов для обеспечения безопасности
+								и отсутствие взысканий и простоев со стороны генерального заказчика</span></p>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<section class="py-5 container-fluid WestSiberia plast__two" style="margin-top: 200px;">
+	<div class="row">
+
+		<div class="col-10 col-md-7 offset-0 offset-lg-1">
+			<h1 class="pageTitle">
+				Результаты в Западной Сибири<span style=" color: #30f;">.</span>
+			</h1>
+			<br>
+		</div>
+		<div class=" col-11 col-md-3 col-lg-3 offset-0 offset-lg-0 vigodiText-float-right">
+			<p class="vacancy-card__text vacancy-card__text-float-left vacancy-card__text_description">
+				*По договору КН/149 <br><span style="margin-left: 9px;">от 18.02.2019 г</span>
+		</div>
+	</div>
+
+
+	<div class="row">
+
+		<div class="col ">
+			<div class="col offset-lg-2">
+				<h1 class="slogan" style="padding-top: 30px;">
+					<span style="color: #30f;font-size: 80px; ">
+						+<span class="Count">16</span>
+						<span class="sup">млн. км</span>
+					</span>
+					<h5 class="bigNumbers-text">
+						Доставлено КАТКонефть
+					</h5>
+					<br>
+				</h1>
+			</div>
+			<br>
+			<div class="col  offset-lg-2">
+				<h1 class="slogan">
+					<span style="color: #30f;font-size: 80px;">
+						+<span class="Count">367</span>
+						<span class="sup">тыс. тонн</span>
+					</span>
+					<h5 class="bigNumbers-text">
+						Проппанта и хим. реагентов
+					</h5>
+					<br>
+				</h1>
+			</div>
+			<br>
+			<div class="col offset-lg-2">
+				<h1 class="slogan">
+					<span style="color: #30f;font-size: 80px;">
+						+<span class="Count3">1471</span>
+						<span class="sup">млн. м<sup style="margin-left: 2px; font-size: 15px;">3</sup></span>
+					</span>
+					<h5 class="bigNumbers-text">
+						Жидкости затарили
+					</h5>
+					<br>
+				</h1>
+			</div>
+
+		</div>
+		<div class="col-12 offset-0  col-lg-6 justify-content-end xmao-item">
+			<img src="{% static 'EtalonSite/images/xmao.png'%}"
+				class="rounded img-fluid mx-auto d-block section__img-map" alt="Карта Западной Сибири"
+				style="margin-top: -100px;">
+			<div class=" offset-0 d-flex justify-content-end">
+				<div class="block-border-top-blue work__list-item">
+					<div class="work__list-item-text work__list-item-text_title work__list-item-text_type_line">
+
+					</div>
+					<div class="work__list-item-text work__list-item-text_desc">
+						<p>«ЭталонТрансСервис», обладающие богатым опытом и признанием, накопленным за {{today.year|slugify|add:"-2010"}} лет работы,
+							сформировала передовое и успешное предприятие, отвечающее всероссийским принципам и
+							стандартам ведения бизнеса
+						</p>
+					</div>
+				</div>
+			</div>
+			<br>
+
+		</div>
+
+</section>
+
+
+<div class="container-fluid plast__two" style="margin-top: 200px;">
+	<div class="row">
+		<div class="col-10 col-md-7 offset-0 offset-lg-1">
+			<h1 class="pageTitle">
+				Профильная аккредитация<span style=" color: #30f;">.</span>
+			</h1>
+			<br>
+		</div>
+		<div class=" col-11 col-md-10 col-lg-3 offset-0 offset-lg-0 vigodiText-float-right" style="margin-top: 30px;">
+			<p class="vacancy-card__text vacancy-card__text-float-left vacancy-card__text_description">
+				Репутация качества и уровня оказываемых услуг, подтвержденная многолетним опытом, и
+				наличие профильной аккредитации в отрасли, признанной крупнейшими игроками рынка</p>
+		</div>
+		<div class="col offset-0 offset-lg-1">
+			<div class="row">
+
+				<div class="col" style="margin-top: 70px;">
+					<a
+						href="https://yung.rosneft.ru/about/Glance/OperationalStructure/Dobicha_i_razrabotka/Zapadnaja_Sibir/yung/">
+						<img style="margin-top: 15px;" src="{% static 'EtalonSite/images/rn_yugan2.png'%}"
+							alt="РН-ЮГАНСКНЕФТЕГАЗ">
+					</a>
+				</div>
+				<div class="col " style="margin-top: 85px;">
+					<a href="https://hm.gazprom-neft.ru/">
+						<img src="{% static 'EtalonSite/images/hm.svg'%}" alt="ГАЗПРОМНЕФТЬ ХАНТОС ">
+					</a>
+				</div>
+				<div class="col " style="margin-top: 70px;">
+					<a href="https://zs.lukoil.ru/ru">
+						<img src="{% static 'EtalonSite/images/lukoil1.png'%}" alt="ЛУКОЙЛ">
+					</a>
+				</div>
+				<div class="col" style="margin-top: 50px;">
+					<a
+						href="https://sbng.rosneft.ru/about/Glance/OperationalStructure/Dobicha_i_razrabotka/Zapadnaja_Sibir/sbng/">
+						<img src="{% static 'EtalonSite/images/sibneft.png'%}" alt="СИБНЕФТЬ">
+					</a>
+				</div>
+
+				<div class="col" style="margin-top: 45px;">
+					<a href="https://www.slavneft.ru/company/geography/megion-gaz/">
+						<img style="margin-top: 50px;" src="{% static 'EtalonSite/images/slavneftMegion1.png'%}"
+							alt="СЛАВНЕФТЬ">
+					</a>
+				</div>
+				<div class="col" style="margin-top: 55px;">
+					<a
+						href="https://www.rosneft.ru/about/Glance/OperationalStructure/Dobicha_i_razrabotka/Zapadnaja_Sibir/Kondaneft/">
+						<img style="margin-top: 39px;" src="{% static 'EtalonSite/images/kondaneft2.png'%}"
+							alt="АО НК КОНДАНЕФТЬ">
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+
+<div class="container-fluid plast__two" style="margin: 200px auto;">
+	<div class="row">
+	<!-- <div class="blog-card"> -->
+
+			<!-- <div class="media col-7" style="background-image: url(https://sun9-35.userapi.com/impf/L4rQFHdfHw2y7VWBhvTcLdPaOfUGMRn92Sr-Yg/ULPwBVpVx88.jpg?size=2560x1862&amp;quality=95&amp;sign=e268345ceff8ae767afb126469d1ecba&amp;type=album)"></div> -->
+			<div class="media col-lg-6 col-12 mx-auto blockImage-powering">
+				<img id="street" class=" img img-fluid" src="{% static 'EtalonSite/images/Люди, которыми мы гордимся/STA03640.webp' %}" alt="street" />
+			</div>
+			<div class="card-body col-3 col-xs-6">
+			<p class="tagline text-center">СОТРУДНИКУ</p>
+
+			<h3 class="safetyTitle-margin pageTitle text-center" style="margin-bottom: 20px;">Безопасность</h3>
+		<p class="vacancy-card__text vacancy-card__text_description text-center">	«ЭталонТрансСервис» гарантирует минимизацию рисков при реализации
+			программы производственной безопасности</p>
+			
+			<div class="accordion accordion-flush" id="accordionFlushExample" style="margin-top:30px;">
+				<div class="accordion-button collapsed vacancy-card__button button button_background__blue"
+					data-bs-toggle="collapse" data-bs-target="#flush-collapseUslovia"
+					aria-expanded="false" aria-controls="flush-collapseUslovia">
+					Безопасные условия труда
+				</div>
+				<div id="flush-collapseUslovia" class="accordion-collapse collapse"
+					aria-labelledby="flush-headingUslovia" data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">
+						<p class="vacancy-card__text vacancy-card__text_description">Обеспечение соблюдения производственных
+							процессов и условий труда сотрудников
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="accordion accordion-flush" id="accordionFlushExample" style="margin-top: 10px;">
+				<div class="accordion-button collapsed vacancy-card__button button button_background__blue"
+					data-bs-toggle="collapse" data-bs-target="#flush-collapseNaTransporte"
+					aria-expanded="false" aria-controls="flush-collapseNaTransporte">
+					Безопасность на транспорте
+				</div>
+				<div id="flush-collapseNaTransporte" class="accordion-collapse collapse"
+					aria-labelledby="flush-headingNaTransporte" data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">
+						<p class="vacancy-card__text vacancy-card__text_description">Обеспечение соблюдения производственных
+							Наличие сертифицированного инструктора по
+							БДД в штате предприятия						</p>
+					</div>
+				</div>
+			</div>
+			<div class="accordion accordion-flush" id="accordionFlushExample" style="margin-top: 10px;">
+				<div class="accordion-button collapsed vacancy-card__button button button_background__blue"
+					data-bs-toggle="collapse" data-bs-target="#flush-collapseObuchenie"
+					aria-expanded="false" aria-controls="flush-collapseObuchenie">
+					Обучение сотрудников
+				</div>
+				<div id="flush-collapseObuchenie" class="accordion-collapse collapse"
+					aria-labelledby="flush-headingObuchenie" data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">
+						<p class="vacancy-card__text vacancy-card__text_description">Семинары и мастер-классы с персоналом по программе
+							защитного зимнего вождения у провайдеров ПАО «Газпром»
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="accordion accordion-flush" id="accordionFlushExample" style="margin-top: 10px;">
+				<div class="accordion-button collapsed vacancy-card__button button button_background__blue"
+					data-bs-toggle="collapse" data-bs-target="#flush-collapseAudit"
+					aria-expanded="false" aria-controls="flush-collapseAudit">
+					Аудит безопасности
+				</div>
+				<div id="flush-collapseAudit" class="accordion-collapse collapse"
+					aria-labelledby="flush-headingAudit" data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">
+						<p class="vacancy-card__text vacancy-card__text_description">Контроль манеры езды, мониторинг скоростного режима и утомляемости сотрудников</p>
+					</div>
+				</div>
+			</div>
+
+	</div>
+	</div>
+</div>
+  </div>
+
+
+
+<div class="container-fluid plast__two" style="margin-top: 60px;">
+	<div class="row">
+		<div class="col-9 col-lg-3 offset-0 offset-lg-1">
+			<h1 class="WhyChooseUs2" style="margin-top: 60px;">
+				Проведение инструктажей
+
+			</h1>
+			<p style="margin-top: 20px;" class="vacancy-card__text vacancy-card__text_description">
+				Наш специалист по БДД,
+				<a href="tel:+79224054081" style="text-decoration: none;">
+
+					<span class="_link">
+						Балыбердин Олег Павлович,
+					</span>
+				</a>
+				проводит перед каждой вахтой предрейсовый инструктаж
+			</p>
+
+		</div>
+		<div class="col-12 col-lg-7 offset-0 offset-lg-1">
+			<div class="row">
+				<div id="carouselExampleDark5" class=" col-12  carousel carousel-dark slide">
+					<div class="carousel-indicators">
+						<button type="button" data-bs-target="#carouselExampleDark5" data-bs-slide-to="0" class="active"
+							aria-current="true" aria-label="Slide 1"></button>
+						<button type="button" data-bs-target="#carouselExampleDark5" data-bs-slide-to="1"
+							aria-label="Slide 2"></button>
+						<button type="button" data-bs-target="#carouselExampleDark5" data-bs-slide-to="2"
+							aria-label="Slide 3"></button>
+						<button type="button" data-bs-target="#carouselExampleDark5" data-bs-slide-to="3"
+							aria-label="Slide 4"></button>
+						<button type="button" data-bs-target="#carouselExampleDark5" data-bs-slide-to="4"
+							aria-label="Slide 5"></button>
+					</div>
+					<div class="carousel-inner">
+						<div class="carousel-item active blockImage-powering " data-bs-interval="2000">
+							<img src="{% static 'EtalonSite/images/Учёба/STA04110.webp'%}" class="d-block w-100"
+								alt="Предрейсовый инструктаж">
+							<div class="hrefVacancies-shadow mx-auto" style="width: 1px; height: 1px;background-color: rgba(71, 69, 204, 0.6);
+				  box-shadow:  0px -110px 190px 130px rgb(51,0,255,0.6); border-radius: 40px;">
+							</div>
+						</div>
+						<div class="carousel-item  blockImage-powering ">
+							<img src="{% static 'EtalonSite/images/Учёба/STA04100.webp'%}" class="d-block w-100"
+								alt="Предрейсовый инструктаж">
+							<div class="hrefVacancies-shadow mx-auto" style="width: 1px; height: 1px;background-color: rgba(71, 69, 204, 0.6);
+				box-shadow:  0px -110px 190px 130px rgb(51,0,255,0.6); border-radius: 40px;">
+							</div>
+						</div>
+						<div class="carousel-item  blockImage-powering " data-bs-interval="2000">
+							<img src="{% static 'EtalonSite/images/Учёба/STA04055.webp'%}" class="d-block w-100"
+								alt="Предрейсовый инструктаж">
+							<div class="hrefVacancies-shadow mx-auto" style="width: 1px; height: 1px;background-color: rgba(71, 69, 204, 0.6);
+				  box-shadow:  0px -110px 190px 130px rgb(51,0,255,0.6); border-radius: 40px;">
+							</div>
+						</div>
+						<div class="carousel-item  blockImage-powering " data-bs-interval="2000">
+							<img src="{% static 'EtalonSite/images/Учёба/STA04059.webp'%}" class="d-block w-100"
+								alt="Предрейсовый инструктаж">
+							<div class="hrefVacancies-shadow mx-auto" style="width: 1px; height: 1px;background-color: rgba(71, 69, 204, 0.6);
+				  box-shadow:  0px -110px 190px 130px rgb(51,0,255,0.6); border-radius: 40px;">
+							</div>
+						</div>
+
+						<div class="carousel-item  blockImage-powering " data-bs-interval="2000">
+							<img src="{% static 'EtalonSite/images/Учёба/STA04049.webp'%}" class="d-block w-100"
+								alt="Предрейсовый инструктаж">
+							<div class="hrefVacancies-shadow mx-auto" style="width: 1px; height: 1px;background-color: rgba(71, 69, 204, 0.6);
+				  box-shadow:  0px -110px 190px 130px rgb(51,0,255,0.6); border-radius: 40px;">
+							</div>
+						</div>
+
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark5"
+						data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark5"
+						data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+
+
+
+
+<div class="col-12 col-md-9 mx-auto plast__three" style="margin-top: 150px; margin-bottom: 0px;">
+	<div class="hrefVacancies-shadow" style="z-index: 2; float: left; width: 1px; height: 1px;margin: 20px 0 0 20px;background-color: rgba(255, 255, 255, 0.6);
+			 box-shadow:  0px 0px 70px 70px rgba(255, 255, 255, 0.6); border-radius: 40px;">
+	</div>
+	<div style="z-index: 1;" class="hrefVacancies hrefVacancies__background-blue">
+		<div class="hrefVacancies__background-blue-svg">
+			<img src="{% static 'EtalonSite/images/bolt.svg'%}" class="" style="margin-bottom: 12px;">
+		</div>
+		<h2 style="font-weight: 800;">Вам Стоит
+			<span style="color: #ffc401;">
+				Попробовать
+			</span>
+		</h2>
+		<div class="col-8 mx-auto">
+			<p class="hrefVacancies__background-blue_text-min " style="font-size: 22px;">Мы открыли заявки на
+				{{vacancies.count}}
+				вакансий. Посмотрите, может одна из них вас заинтересует</p>
+		</div>
+		<a href="{% url 'vacancies' %}">
+			<button style="margin-top: 10px; margin-bottom: 15px;"
+				class="hrefVacancies__button_background__blue">Посмотреть</button>
+		</a>
+	</div>
+</div>
+</div>
+</div>
+
+
+		<div class="main-roller  plast__two">
+			<h1 class="pageTitle depart__title">Департаменты<div class="roller">
+			  <span id="rolltext">Диспетчерская служба<br/>
+				Специалист по от, тб и бдд
+				<br/>
+				Штатные механики
+				<br/>
+				Кадровая служба	
+				<br/>
+				Финансовая служба и бухгалтерия
+				<br/>
+			</div>
+		</h1>
+		<br>
+		
+<div class="container-fluid">
+	<center>
+		<div style="margin-top: 25px; margin-bottom: 20px;" class="col-12 col-lg-10 blockImage-powering ">
+			<img src="{% static '/EtalonSite/images/Департаменты.webp'%}" alt="Департаменты" class="img-fluid">
+		</div>
+	</center>
+</div>
+
+
+		<br>
+		<div class="container">
+
+			<span style="font-size: 2rem;
+		/* letter-spacing: 1rem; */
+		color: #A8DADC;" class="vacancy-card__text">За годы развития ООО «ЭталонТрансСервис» удалось качественно
+			расширить штат сотрудников и организовать необходимые отделы
+			компании, обеспечивающие оказание первоклассных услуг</span><br/>
+		</div>
+		
+	</div>
+		
+
+
+<div class="container-fluid plast__two" style="margin-top: 200px;">
+	<div class="row">
+		<div class="col-10 offset-0 offset-lg-1">
+			<h1 class="pageTitle">
+				Наши партнеры<span style=" color: #30f;">.</span>
+			</h1>
+			<br>
+		</div>
+	</div>
+</div>
+
+
+
+
+<div class="ticker ticker2" style="margin-bottom: 100px;">
+	<div class="ticker__list ticker__list2">
+		<a href="http://www.mecamineft.com/">
+
+			<div class="ticker__item">
+				<img src="{% static 'EtalonSite/images/mekamineft1.png'%}" alt="МеКаМинефть">
+			</div>
+		</a>
+		<a href="https://vk.com/everbrightenergy">
+			<div class="ticker__item">
+				<img src="{% static 'EtalonSite/images/svetEnergy1.png'%}" alt="Свет Энергия">
+			</div>
+		</a>
+		<a href="https://calfrac.com/">
+
+			<div class="ticker__item">
+				<img src="{% static 'EtalonSite/images/calfrac1.png'%}" alt="Calfrac Well Services">
+			</div>
+		</a>
+		<a href="https://yung.rosneft.ru/about/Glance/OperationalStructure/Dobicha_i_razrabotka/Zapadnaja_Sibir/yung/">
+			<div class="ticker__item">
+				<img style="margin-top: 30px;" src="{% static 'EtalonSite/images/rn_yugan2.png'%}"
+					alt="РН-ЮГАНСКНЕФТЕГАЗ">
+			</div>
+		</a>
+		<a href="https://market.neftegaz.ru/catalog/company/358249-katkoneft/">
+
+			<div class="ticker__item">
+				<img src="{% static 'EtalonSite/images/katko1.png'%}" alt="КаткоНефть">
+			</div>
+		</a>
+		<a href="https://www.integra.ru/">
+			<div class="ticker__item">
+				<img style="margin-top: 10px;" src="{% static 'EtalonSite/images/logo-integra2.png'%}" alt="Integra">
+			</div>
+		</a>
+		<a href="https://www.slb.ru/">
+			<div class="ticker__item">
+				<img style="margin-top: 40px;" src="{% static 'EtalonSite/images/Schlumberger2.png'%}"
+					alt="Schlumberger">
+			</div>
+		</a>
+		<a href="https://www.gisns.ru/">
+			<div class="ticker__item">
+				<img style="margin-top: 20px;" src="{% static 'EtalonSite/images/Gisnslogo1.png'%}"
+					alt="ГИС Нефтесервис">
+			</div>
+		</a>
+		<a href="https://tubingrent.ru/">
+			<div class="ticker__item" style="margin-top: 20px;">
+				<img src="{% static 'EtalonSite/images/tubing2.png'%}" alt="Тюбинг Рент">
+			</div>
+		</a>
+	</div>
+</div>
+
+
+<div class="container-fluid plast__two" style="margin-top: 200px; margin-bottom: 100px;">
+	<div class="col-10 offset-0 offset-lg-1">
+		<h1 class="pageTitle" style="margin-bottom: 50px;">
+			Офис<span style=" color: #30f;">.</span>
+		</h1>
+	</div>
+	<div class="row">
+		<div class="col-10 col-sm-4 col-lg-3 offset-0 offset-lg-1">
+			<h2 class="vacancy-card__title"><span class="numbers-big-blue">Адрес</span></h2>
+			<p class="vacancy-card__text vacancy-card__text_description"><span>
+					Нефтеюганский район, г.п. Пойковский, Промзона стр. 9. <br> <span class="cart__link">Найти на
+						карте</span> </span></p>
+		</div>
+		<div class="col-10 col-sm-4 col-lg-3 offset-0 offset-lg-1">
+			<h2 class="vacancy-card__title"><span class="numbers-big-blue">График</span></h2>
+			<p class="vacancy-card__text vacancy-card__text_description"><span>
+					ПН-ПТ, С 8:00 до 17:00</span></p>
+		</div>
+		<div class=" col-11 col-sm-4  col-lg-4 offset-0 offset-lg-0">
+			<h2 class="vacancy-card__title"><span class="numbers-big-blue">Номер</span></h2>
+			<p class="vacancy-card__text vacancy-card__text_description"><span>
+					8-3463-210-555
+				</span></p>
+
+		</div>
+
+	</div>
+	<div class="row cart" style="margin-top: 10px;">
+				<iframe max-width="1100" height="420" class="col-10 offset-0 offset-lg-1 Yandex__cart" src="https://yandex.ru/map-widget/v1/?um=constructor%3Ac54b69af654a7bd29986ab009e9b97863b853d15cc414dd85d5dca51bbc17cec&amp;source=constructor"  frameborder="0"></iframe>
+		</div>
+	</div>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+	
+	var ticker = document.querySelector('.ticker')
+		, list = document.querySelector('.ticker__list')
+		, clone = list.cloneNode(true)
+
+	ticker.append(clone)
+	
+
+	var ticker2 = document.querySelector('.ticker2')
+		, list2 = document.querySelector('.ticker__list2')
+		, clone2 = list2.cloneNode(true)
+
+	ticker2.append(clone2)
+
+	let isScroll = 0, // доп. проверка
+		targetScroll = 3700; // расстояние до действия / в px
+
+	$(window).on('scroll', function () {
+		if (isScroll === 0 && $(this).scrollTop() >= targetScroll) {
+			isScroll = 1;
+			$('.Count').each(function () {
+				var $this = $(this);
+				jQuery({ Counter: 0 }).animate({ Counter: $this.text() }, {
+					duration: 2000,
+					easing: 'swing',
+					step: function () {
+						var number = Math.ceil(this.Counter).toString();
+						$this.html(number.slice(0, -3) + number.slice(-3));
+					}
+				});
+			});
+			$('.Count3').each(function () {
+				var $this = $(this);
+				jQuery({ Counter: 0.1 }).animate({ Counter: $this.text() }, {
+					duration: 2000,
+					easing: 'swing',
+					step: function () {
+						var number = Math.ceil(this.Counter).toString();
+						$this.html(number.slice(0., -3)+ '.' + number.slice(-3));
+					}
+				});
+			});
+
+		}
+	});
+
+	document.querySelector('.cart__link').addEventListener('click', function () {
+		$('.cart').css('display', 'block');
+	});
+</script>
+
+{% endblock %}

@@ -1,0 +1,700 @@
+{% load static %}
+{% load sass_tags %}
+<!DOCTYPE html>
+<html lang="ru" prefix="og: http://ogp.me/ns#">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link type="image/x-icon" href="{% static 'EtalonSite/images/favicon.ico' %}" rel="shortcut icon">
+  <link type="Image/x-icon" href="{% static 'EtalonSite/images/favicon.ico' %}" rel="icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="{% static 'EtalonSite/css/base.css' %}" rel="stylesheet" type="text/css" />
+
+  {% block head %}
+  {% endblock%}
+</head>
+
+<body>
+  <style>
+    @font-face {
+      font-family: 'Inter';
+      src: url('/static/EtalonSite/fonts/Inter-V.ttf') format('truetype')
+    }
+
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      background-color: #f6f6f6;
+      color: #000;
+      -webkit-text-size-adjust: 100%;
+      -moz-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
+
+
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background-color: #f6f6f6;
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background: #30f;
+;
+    }
+
+    .gg-phone {
+      box-sizing: border-box;
+      position: relative;
+      display: block;
+      width: 22px;
+      height: 22px;
+      transition: .15s ease-in-out;
+      margin: 7px 15px 0px 5px;
+      transform: scale(var(--ggs, 1))
+    }
+
+    .gg-phone::after,
+    .gg-phone::before {
+      content: "";
+      display: block;
+      box-sizing: border-box;
+      position: absolute
+    }
+
+    .gg-phone::after {
+      width: 18px;
+      height: 18px;
+      border-top-left-radius: 1px;
+      border-bottom-right-radius: 1px;
+      border-bottom-left-radius: 12px;
+      border-left: 4px solid;
+      border-bottom: 4px solid;
+      left: 2px;
+      bottom: 2px;
+      background:
+        linear-gradient(to left,
+          currentColor 20px,
+          transparent 0) no-repeat right 11px/6px 4px,
+        linear-gradient(to left,
+          currentColor 20px,
+          transparent 0) no-repeat -1px 0/4px 6px
+    }
+
+    .gg-phone::before {
+      width: 20px;
+      height: 20px;
+      border: 6px double;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      border-radius: 50%;
+      transform: rotate(-45deg);
+      bottom: 2px;
+      left: 2px
+    }
+
+    .gg-mail,
+    .gg-mail::after {
+      display: block;
+      box-sizing: border-box;
+      height: 14px;
+      border: 2px solid
+    }
+
+    .gg-mail {
+      overflow: hidden;
+      transform: scale(var(--ggs, 1.1));
+      position: relative;
+      transition: .15s ease-in-out;
+      width: 18px;
+      margin: 11px 5px 0px 5px;
+      border-radius: 2px
+    }
+
+    .gg-mail:hover,
+    .gg-phone:hover {
+      transform: scale(var(--ggs, 1.4));
+      transition: .15s ease-in-out;
+    }
+
+    .gg-phone:hover {
+      transform: scale(var(--ggs, 1.2));
+      transition: .15s ease-in-out;
+    }
+
+
+
+    .gg-mail::after {
+      content: "";
+      position: absolute;
+      border-radius: 3px;
+      width: 14px;
+      transform: rotate(-45deg);
+      bottom: 3px;
+      left: 0
+    }
+
+    .footer {
+      font-size: 0.9375rem;
+      line-height: 1.0625rem;
+      background-color: #F5F5F5;
+      letter-spacing: -.04em;
+      padding: 1.5625rem 0;
+      color: #b7b7b7;
+      /* border-radius: 25px 25px 0 0; */
+      text-align: center;
+    }
+
+    .layout__footer {
+      z-index: 0;
+    }
+
+    @keyframes appear {
+      0% {
+        opacity: .8;
+        transform: scale(.5, .5);
+      }
+
+      70% {
+        opacity: .3;
+        transform: scale(1, 1);
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(.5, .5);
+      }
+    }
+
+    @-webkit-keyframes appear {
+      0% {
+        opacity: .8;
+        -webkit-transform: scale(.5, .5);
+      }
+
+      70% {
+        opacity: .3;
+        -webkit-transform: scale(1, 1);
+      }
+
+      100% {
+        opacity: 0;
+        -webkit-transform: scale(.5, .5);
+      }
+    }
+
+    .cursor {
+      position: fixed;
+      width: 40px;
+      height: 40px;
+      margin: -20px 0 0 -20px;
+      border-radius: 50%;
+      background: #30f;
+      animation: appear .2s;
+      -webkit-animation: appear .2s;
+    }
+
+    #logo__buv {
+      width: 42px;
+      height: 20px;
+      margin-top: -2.5px;
+      fill: #8A8D93;
+      margin-left: 5px;
+      transition: .30s ease-in-out;
+
+    }
+
+    #logo__buv:hover {
+      fill: #E10606;
+      transition: .30s ease-in-out;
+
+    }
+
+    .header__menu-item {
+      font-weight: 600;
+      font-size: 1.0625rem;
+      line-height: 1.25rem;
+      display: block;
+      color: #000;
+      margin: 0rem 1.25rem;
+      text-decoration: none;
+      letter-spacing: -.03em;
+      border-radius: 1.5rem;
+      transition: .35s ease-in-out;
+    }
+
+    .header__menu-item-collapse {
+      font-weight: 600;
+      font-size: 2rem;
+      line-height: 9vh;
+      letter-spacing: -.04em;
+      /* padding-bottom: 9vh; */  
+      margin-top: -10px;
+      text-decoration: none;
+      border-radius: 0;
+      color: #000;
+    }
+
+    .header__menu-item:hover {
+      background-color: #f1f1f1;
+    }
+
+    .header__menu-item-collapse:hover {
+      color: #30f;
+    }
+
+    #navbarToggleExternalContent9 {
+      margin-left: 10px;
+    }
+
+    .site-header {
+      background-color: rgb(246, 246, 246, 0.4);
+      transition: all 1.5s ease;
+    }
+
+
+    #navbarToggleExternalContent9 a {
+      color: #181818;
+      transition: all 1.5s ease;
+      opacity: 0.8;
+    }
+
+    #navbarToggleExternalContent9:hover,
+    .site-header:hover {
+      background-color: rgb(246, 246, 246, 1);
+      transition: all 0.5s ease;
+      /* background-color: #F5F5F5 ; */
+    }
+
+    .Menu a {
+      text-decoration: none;
+    }
+
+    .visible {
+      transition: all 3.5s ease;
+      opacity: 0;
+      display: none;
+    }
+
+    .popup {
+      position: fixed;
+      width: 100%;
+      z-index: 222;
+      height: 100%;
+      transition: all 3.5s ease;
+      text-align: center;
+      top: 0;
+      left: 0;
+      opacity: 1;
+      background: #fff;
+    }
+
+    .popup__containerInfo {
+     transform: translate(0%, 200px);
+    }
+
+
+    @keyframes fade {
+      from {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    @-webkit-keyframes fade {
+      from {
+        opacity: 1;
+        -webkit-backface-visibility: visible;
+      }
+
+      to {
+        opacity: 0;
+        -webkit-backface-visibility: visible;
+      }
+    }
+
+    .popup__logo {
+      position: fixed;
+      width: 100%;
+      z-index: 9999;
+      height: 100%;
+      animation: fade 1s ease forwards;
+      animation-delay: 1.7s;
+      -webkit-animation: fade 1s ease forwards;
+      -webkit-animation-delay: 1.7s;
+      -moz-animation: fade 1s ease forwards;
+      -moz-animation-delay: 1.7s;
+      text-align: center;
+      top: 0;
+      left: 0;
+      background: #1E2345;
+    }
+
+    .popup__container__logo img {
+      transform: translate3d(0, 30%, 0);
+    }
+
+
+    nav .accordion-body i {
+      position: fixed;
+      top: 75px;
+      right: 5rem;
+    }
+
+    .accordion-body .navbar-collapse-item_mail i {
+      top: 78px;
+      position: fixed;
+      right: 7.5rem;
+    }
+
+    .top-btn {
+      all: unset;
+      font-size: 1.5rem;
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      cursor: pointer;
+      transform: scale(1.8);
+      -webkit-transformtransform: scale(1.8);
+      opacity: 0;
+      transition: .3s;
+    }
+
+
+    .centered-container {
+      background-color: #fff;
+      display: inline-flex;
+      padding: 4rem;
+      border-radius: 0.125rem;
+      border: 1px solid rgba(0, 0, 0, .1);
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, .04);
+    }
+
+    .link {
+      color: #30f;
+      cursor: pointer;
+      font-weight: 400;
+      text-decoration: none;
+    }
+
+    .link--arrowed {
+      display: inline-block;
+      transform: rotate(-90deg);
+      height: 2rem;
+      line-height: 2rem;
+    }
+
+    .link--arrowed .arrow-icon {
+      position: relative;
+      top: -1px;
+      -webkit-transition: -webkit-transform 0.3s ease;
+      transition: -webkit-transform 0.3s ease;
+      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+      vertical-align: middle;
+    }
+
+    .link--arrowed .arrow-icon--circle {
+      transition: stroke-dashoffset 0.3s ease;
+      stroke-dasharray: 95;
+      stroke-dashoffset: 95;
+    }
+
+    .link--arrowed:hover .arrow-icon {
+      transform: translate3d(5px, 0, 0);
+    }
+
+    .link--arrowed:hover .arrow-icon--circle {
+      stroke-dashoffset: 0;
+    }
+
+    .nav-link {
+      color: #000;
+    }
+
+    .nav-link:hover {
+      color: #000;
+    }
+
+    #logo img {
+      width: 165px;
+      margin-top: 0px;
+    }
+
+    @media (max-width: 767px) {
+      #logo img {
+        width: 130px;
+      }
+    }
+
+    @media (min-width: 991px) {
+      .header__burger_button {
+        display: none;
+      }
+    }
+
+    .header__burger {
+      display: none;
+      padding: 0.8125rem 1rem;
+      border-radius: 62.4375rem;
+      background-color: #eee;
+      align-items: center;
+    }
+
+    
+	.pageTitle {
+		color: #000;
+		font-weight: 700;
+		font-size: 4.6875rem;
+		line-height: 4.875rem;
+		letter-spacing: -.05em;
+		margin-bottom: 0.225rem;
+		margin-left: -6px;
+		position: relative;
+		z-index: 1;
+	}
+  
+	@media (max-width: 767px) {
+		
+		.pageTitle {
+			font-size: 3.25rem;
+			line-height: 3.25rem;
+			margin-bottom: 1.25rem;
+		}
+  }
+    @media (max-width: 991px) {
+
+      .gg-mail,
+      .gg-phone {
+        margin-top: 1rem;
+      }
+
+      .gg-phone {
+        margin-top: 0.8rem;
+      }
+
+      .header__burger {
+        display: flex;
+        position: relative;
+        z-index: 1;
+      }
+    }
+
+    .header__burger {
+      padding: 0.8125rem 1rem;
+      border-radius: 62.4375rem;
+      background-color: #eee;
+      align-items: center;
+    }
+
+    .header__burger-text {
+      font-weight: 600;
+      font-size: 1.0625rem;
+      line-height: 1.25rem;
+      letter-spacing: -.03em;
+      height: 0.9375rem;
+      line-height: 100%;
+      overflow: hidden;
+      transition: width .15s ease-in-out;
+    }
+  </style>
+  <button class="top-btn"><a class="link link--arrowed" href="#"><svg class="arrow-icon"
+        xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+        <g fill="none" stroke="#30f" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
+          <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
+          <path class="arrow-icon--arrow" d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"></path>
+        </g>
+      </svg></a></button>
+  <div class="sticky-top site-header">
+
+    <nav class="  navbar navbar-expand-lg">
+      <div class="container">
+        <div class="row">
+          <div class="">
+            <a id="logo" class="navbar-brand  col-4 col-sm-7 col-md-4 " href="{% url 'home' %}" style="color: #000;">
+              <img src="{% static 'EtalonSite/images/ets.svg' %}" alt="логотип" class="">
+            </a>
+          </div>
+        </div>
+        <div class="collapse justify-content-end navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item header__menu-item">
+              <a class="nav-link " href="{% url 'contacts' %}">Контакты</a>
+              
+            </li>
+            <li class="nav-item header__menu-item">
+              <a class="nav-link " href="{% url 'vacancies' %}">Вакансии</a>
+            </li>
+            <li class="nav-item header__menu-item">
+              <a class="nav-link " href="{% url 'galery' %}">Галерея</a>
+            </li>
+            <li class="nav-item header__menu-item">
+              <a class="nav-link " href="{% url 'video' %}">Видео</a>
+            </li>
+            <li class="nav-item header__menu-item">
+              <a class="nav-link " href="{% url 'blog' %}">Блог</a>
+            </li>
+          </ul>
+          
+        </div>
+        <span class="nav-item ">
+          <a href="mailto:disp2010@etalonts.ru?subject=Письмо с сайта&body=Здравствуйте!" target="_blank"
+            class="contacts__item-text  navbar-collapse-item navbar-collapse-item_mail">
+            <i style="float: left;color: #30f; " class="gg-mail"></i>
+          </a>
+          <a href="tel:+79821832640" class="contacts__item-text  navbar-collapse-item">
+            <i style="float: left;color: #30f;   " class="gg-phone"></i>
+          </a>
+          <button class="header__burger_button" style="border: none; border-radius: 62.4375rem;">
+            <div class="navbar-toggler first-button header__burger" type="button" data-mdb-toggle="collapse"
+              data-mdb-target="#navbarToggleExternalContent9" aria-controls="navbarToggleExternalContent9"
+              aria-expanded="false" aria-label="Toggle navigation">
+              <div class="header__burger-text">
+                <div class="header__burger-text-wrapper">Меню</div>
+              </div>
+
+          </button>
+        </span>
+
+        <div class="accordion-body visible " style="margin-top: 3px; padding: 5px; ">
+          <a href="mailto:disp2010@etalonts.ru?subject=Письмо с сайта&body=Здравствуйте!" target="_blank"
+            class="contacts__item-text  navbar-collapse-item navbar-collapse-item_mail">
+            <i class="gg-mail d-inline"></i>
+          </a>
+          <a href="tel:+79821832640" class="contacts__item-text  navbar-collapse-item">
+            <i class="gg-phone d-inline"></i>
+          </a>
+        </div>
+
+        
+        
+      </div>
+    </nav>    
+  </div>
+  </div>
+  </div>
+
+  <div class="popup visible">
+    <div class="popup__containerInfo">
+      <a class="header__menu-item-collapse" href="{% url 'vacancies' %}"><p>Контакты</p></a>
+      <a class="header__menu-item-collapse" href="{% url 'vacancies' %}"><p>Вакансии</p></a>
+      <a class="header__menu-item-collapse" href="{% url 'galery' %}"><p>Галерея</p></a> 
+      <a class="header__menu-item-collapse" href="{% url 'video' %}"><p>Видео</p></a> 
+      <a class="header__menu-item-collapse" href="{% url 'blog' %}"><p>Блог</p></a> 
+        </div>
+  </div>
+
+  <div class="popup__logo visible">
+    <div class="popup__container__logo">
+        <img src="{% static 'EtalonSite/images/ЭТС-вертикальный.png' %}" alt="логотип" class="img-fluid">
+    </div>
+  </div>
+  {% block content %}
+  {% endblock %}
+
+  <footer role=" contentinfo" class="container footer layout__footer">
+    <div class="row">
+      <div class="col">
+        <div class="footer__inner">ООО «ЭталонТрансСервис» ©&nbsp;2010&nbsp;— {{today.year}}
+        </div>
+      </div>
+      <div class="col">
+        <div class="footer__inner">Дизайн и разработка:
+          <a href="https://telegram.me/Yuriy_Bestuzhev">
+
+            <svg id="logo__buv" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 509.6 213.98">
+              <path class="cls-1"
+              d="M75.27,213.98c-14.23,0-27.01-3.08-38.35-9.23-11.34-6.15-20.33-15.04-26.96-26.68C3.31,166.45,0,152.46,0,136.11V0H26.53V89.69h.58c3.27-5.96,7.54-11.15,12.83-15.57,5.29-4.42,11.34-7.88,18.17-10.38,6.82-2.49,13.99-3.75,21.49-3.75,13.65,0,25.86,3.08,36.62,9.23,10.76,6.16,19.27,14.85,25.52,26.1,6.24,11.25,9.37,24.56,9.37,39.94,0,12.11-1.87,23.03-5.62,32.73-3.75,9.71-8.99,18.02-15.71,24.94-6.73,6.92-14.71,12.16-23.93,15.72-9.23,3.55-19.42,5.33-30.57,5.33Zm0-22.78c9.03,0,17.25-2.21,24.66-6.63,7.4-4.42,13.31-10.67,17.73-18.74,4.42-8.08,6.63-17.69,6.63-28.84s-2.16-20.18-6.49-28.26c-4.33-8.07-10.14-14.42-17.45-19.03-7.31-4.61-15.57-6.92-24.8-6.92s-17.26,2.21-24.66,6.63c-7.4,4.42-13.27,10.72-17.59,18.89-4.33,8.18-6.49,17.84-6.49,28.98s2.16,20.47,6.49,28.55c4.33,8.07,10.19,14.32,17.59,18.74,7.4,4.42,15.52,6.63,24.37,6.63Z" />
+            <path class="cls-1"
+              d="M235.46,213.98c-13.27,0-25.14-2.74-35.62-8.22-10.48-5.48-18.65-13.12-24.51-22.93-5.87-9.8-8.8-21.24-8.8-34.31V63.44h26.82v84.78c0,8.84,1.92,16.49,5.77,22.93,3.84,6.44,8.98,11.39,15.43,14.85,6.44,3.46,13.31,5.19,20.62,5.19s14.46-1.73,20.91-5.19c6.44-3.46,11.63-8.41,15.57-14.85,3.94-6.44,5.91-14.08,5.91-22.93V63.44h26.82v85.07c0,13.07-2.98,24.51-8.94,34.31-5.96,9.8-14.13,17.45-24.51,22.93-10.38,5.48-22.2,8.22-35.47,8.22Z" />
+              <path class="cls-1"
+              d="M397.09,213.98c-6.54,0-12.45-1.87-17.73-5.62-5.29-3.75-9.18-9.08-11.68-16l-47.87-128.91h29.13l42.68,119.1c.77,1.92,1.63,3.27,2.6,4.04,.96,.77,2.02,1.15,3.17,1.15,1.34,0,2.45-.38,3.31-1.15,.87-.77,1.68-2.12,2.45-4.04l42.97-119.1h28.55l-47.87,128.91c-2.69,6.92-6.63,12.26-11.82,16-5.19,3.75-11.15,5.62-17.88,5.62Z" />
+            <circle class="cls-1" cx="492.13" cy="196.51" r="17.47" />
+          </svg>
+        </a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+
+
+  <script>
+    setTimeout(scrollBar, 1000)
+    function scrollBar() {
+      $('body').css('overflow-y', 'auto');
+    }
+    document.querySelector('.header__burger').addEventListener('click', function () {
+      if (Array.from(document.querySelector('.popup').classList).includes("visible") == true) {
+        document.querySelector('.header__burger-text').innerText = "Закрыть"
+        document.querySelector('.popup').classList.remove('visible');
+
+        $('.site-header').css('background', 'white');
+        $('body').css('overflow-y', 'hidden');
+      } else {
+        $('.site-header').css('background', '#f6f6f6');
+        document.querySelector('.popup').classList.add('visible');
+        document.querySelector('.header__burger-text').innerText = "Меню"
+        $('body').css('overflow-y', 'hidden');
+
+      }
+
+    });
+    const popup2 = document.querySelector('.popup2');
+    const popupBuy = document.querySelector('.popupBuy');
+    const popupBuy2 = document.querySelector('.popupBuy2');
+    const deleteForm = document.querySelector('.delete');
+    const headerButton = document.querySelector('.header__button_color-white');
+    const accordionBody = document.querySelector('nav .accordion-body');
+    let topBtn = document.querySelector(".top-btn");
+
+
+
+
+    // On Click, Scroll to the page's top, replace 'smooth' with 'instant' if you don't want smooth scrolling
+    topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+    // On scroll, Show/Hide the btn with animation
+    window.onscroll = () => topBtn.style.opacity = window.scrollY > 500 ? 1 : 0;
+
+    $(document).on('click', function (e) {
+      $('<div class="cursor">')
+        .css({
+          top: e.clientY,
+          left: e.clientX
+        })
+        .appendTo($(document.body))
+        .on('animationend webkitAnimationEnd', function (e) {
+          $(this).remove();
+        });
+    });
+
+
+  </script>
+</body>
+
+</html>
